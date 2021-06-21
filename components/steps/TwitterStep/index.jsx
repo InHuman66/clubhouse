@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { WhiteBlock } from '../../WhiteBlock/index';
-import { Button } from '../../Button/index';
+import { Button } from '../../Button';
 import { StepInfo } from '../../StepInfo';
 import styles from './TwitterStep.module.scss';
 import React from 'react';

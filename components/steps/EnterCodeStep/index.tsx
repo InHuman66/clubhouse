@@ -2,9 +2,8 @@ import React from 'react';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import { WhiteBlock } from '../../WhiteBlock/index';
-import { Button } from '../../Button/index';
+import { Button } from '../../Button';
 import { StepInfo } from '../../StepInfo';
-import Axios from '../../../core/axios';
 
 import styles from './EnterPhoneStep.module.scss';
 
@@ -14,18 +13,18 @@ export const EnterCodeStep = () => {
   const [codes, setCodes] = React.useState(['', '', '', '']);
   const nextDisabled = codes.some((v) => !v);
 
-  // const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   const index = Number(event.target.getAttribute('id'));
-  //   const value = event.target.value;
-  //   setCodes((prev) => {
-  //     const newArr = [...prev];
-  //     newArr[index] = value;
-  //     return newArr;
-  //   });
-  //   if (event.target.nextSibling) {
-  //     (event.target.nextSibling as HTMLInputElement).focus();
-  //   }
-  // };
+  const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const index = Number(event.target.getAttribute('id'));
+    const value = event.target.value;
+    setCodes((prev) => {
+      const newArr = [...prev];
+      newArr[index] = value;
+      return newArr;
+    });
+    if (event.target.nextSibling) {
+      (event.target.nextSibling as HTMLInputElement).focus();
+    }
+  };
 
 
   return (
@@ -47,7 +46,7 @@ export const EnterCodeStep = () => {
                 />
               ))}
             </div>
-            <Button onClick={onSubmit} disabled={nextDisabled}>
+            <Button disabled={nextDisabled}>
               Next
               <img className="d-ib ml-10" src="/static/arrow.svg" />
             </Button>

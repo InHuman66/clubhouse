@@ -8,7 +8,13 @@ const colors = {
   gray: styles.buttonGray,
   blue: styles.buttonBlue,
 };
-export const Button = ({children, disabled, color, onClick, className,}) => {
+interface buttonProps {
+  disabled?:boolean
+  color?: string
+  onClick?:(event:React.MouseEvent<HTMLButtonElement>)=>void
+  className?:string
+}
+export const Button:React.FC<buttonProps> = ({children, disabled, color, onClick, className,}) => {
   return (
     <button
       onClick={onClick}
