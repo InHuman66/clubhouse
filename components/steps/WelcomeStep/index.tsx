@@ -3,9 +3,12 @@ import { WhiteBlock } from '../../WhiteBlock';
 import styles from './WelcomeStep.module.scss';
 import React from 'react';
 import {Button} from "../../Button";
+import { MainContext } from '../../../pages';
+
 
 export const WelcomeStep= () => {
 
+  const {onNextstep} = React.useContext(MainContext)
   return (
     <WhiteBlock className={styles.block}>
       <h3 className={styles.title}>
@@ -17,7 +20,7 @@ export const WelcomeStep= () => {
         youches, we’re adding people gradually to make sure nothing breaks :)
       </p>
       <div>
-        <Button onClick={()=>{}}>
+        <Button onClick={onNextstep}>
           Get your username
           <img className="d-ib ml-10" src="/static/arrow.svg" />
         </Button>

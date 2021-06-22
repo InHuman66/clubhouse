@@ -6,6 +6,7 @@ import { Button } from '../../Button';
 import { StepInfo } from '../../StepInfo';
 
 import styles from './EnterPhoneStep.module.scss';
+import Axios from "../../../core/app_API";
 
 export const EnterCodeStep = () => {
   const router = useRouter();
@@ -26,7 +27,16 @@ export const EnterCodeStep = () => {
     }
   };
 
-
+  let  onClickLoading = async ()=>{
+    try {
+      setIsLoading(true)
+      await Axios.get('/todos')
+      router.push('/rooms')
+    }catch (error){
+      alert('упс, произошла ошибка')
+    }
+    setIsLoading(false)
+  }
   return (
     <div className={styles.block}>
       {!isLoading ? (
@@ -46,7 +56,7 @@ export const EnterCodeStep = () => {
                 />
               ))}
             </div>
-            <Button disabled={nextDisabled}>
+            <Button onClick={onClickLoading} disabled={nextDisabled}>
               Next
               <img className="d-ib ml-10" src="/static/arrow.svg" />
             </Button>

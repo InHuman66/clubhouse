@@ -4,6 +4,7 @@ import { WhiteBlock } from '../../WhiteBlock/index';
 import { Button } from '../../Button';
 import { StepInfo } from '../../StepInfo'
 import styles from './ChooseAvatarStep.module.scss';
+import {MainContext} from "../../../pages";
 
 
 export const ChooseAvatarStep:React.FC= () => {
@@ -16,6 +17,7 @@ export const ChooseAvatarStep:React.FC= () => {
             setAvatarURL(imageUrl)
         }
     }
+    let {onNextstep}= React.useContext(MainContext)
   return (
     <div className={styles.block}>
       <StepInfo
@@ -35,7 +37,7 @@ export const ChooseAvatarStep:React.FC= () => {
           </label>
         </div>
         <input ref={inputFileRef} onChange={handleChangeImage} id="image"  type="file" hidden />
-        <Button>
+        <Button onClick={onNextstep}>
           Next
           <img className="d-ib ml-10" src="/static/arrow.svg" />
         </Button>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Room() {
+export default function Rooms() {
     return (
         <div>
             <h1>Room</h1>
