@@ -1,13 +1,23 @@
-import {useRouter} from "next/router";
+import { useRouter } from 'next/router';
+import React from 'react';
+import { Header } from '../../components/Header';
+import { Profile } from '../../components/Profile';
 
+export default function ProfilePage() {
+    const router = useRouter();
+    const { id } = router.query;
 
-export default function Rooms() {
-    const router = useRouter()
-    const{id} = router.query
     return (
-        <div className={'text-center'}>
-            <h1>Profile</h1>
-            <p>your id: {id}</p>
-        </div>
-    )
+        <>
+            <Header />
+            <div className="container mt-30">
+                <Profile
+                    avatarUrl="http://ecscggo.com/assets/images/users/1.jpg"
+                    fullname="Sanya Kis"
+                    username="san4ez"
+                    about="Test info"
+                />
+            </div>
+        </>
+    );
 }

@@ -1,4 +1,5 @@
 .block {
+  background-color: #f3efe4;
   margin: 100px auto;
   text-align: center;
   display: flex;
@@ -13,6 +14,11 @@
 }
 .whiteBlock {
   width: 460px;
+}
+.avatar_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .avatar {
   display: flex;

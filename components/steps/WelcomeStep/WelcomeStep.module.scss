@@ -1,3 +1,6 @@
+.whiteBlock {
+  width: 460px;
+}
 .handWaveImg {
   animation-name: wave-animation;
   animation-duration: 3s;
@@ -11,14 +14,13 @@
 }
 
 .block {
+  background-color: #f3efe4;
   margin: 100px auto;
   text-align: center;
-
-  p {
-    font-size: 20px;
-    line-height: 36px;
-    margin-bottom: 40px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .title {

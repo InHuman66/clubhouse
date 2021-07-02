@@ -5,6 +5,7 @@ import { Button } from '../../Button';
 import { StepInfo } from '../../StepInfo'
 import styles from './ChooseAvatarStep.module.scss';
 import {MainContext} from "../../../pages";
+import {Avatar} from "../../avatar";
 
 
 export const ChooseAvatarStep:React.FC= () => {
@@ -26,10 +27,8 @@ export const ChooseAvatarStep:React.FC= () => {
         description="How’s this photo?"
       />
       <WhiteBlock className={clsx('m-auto mt-40', styles.whiteBlock)}>
-        <div className={styles.avatar}>
-            <div className={styles.avatar_style} style={{width: '100px', height:'100px', backgroundImage : `url(${avatarURL})`}}>
-
-            </div>
+        <div className={styles.avatar_wrapper}>
+          <Avatar src={avatarURL} width={'80px'} height={'80px'}/>
         </div>
         <div className="mb-30">
           <label  htmlFor="image" className={styles.label_style + " link cup"}>
